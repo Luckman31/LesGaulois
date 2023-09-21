@@ -5,51 +5,39 @@ import java.security.PublicKey;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 public class Gaulois {
-	private String nomString;
-	@Override
-	public String toString() {
-		return "Gaulois [nomString=" + nomString + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-	}
+	private String nom;
 	private int force;
-	private int effetPotion = 1;
 	public Gaulois(String nom, int force) {
-		super();
-		this.nomS = nom;
+		this.nom = nom;
 		this.force = force;
 	}
-public static void main(String[] args) {
-	if (condition) {
-		
+	public String getNom() {
+		return nom;
 	}
-	switch (key) {
-	case value:
-		
-		break;
-
-	default:
-		break;
+	public void parler(String texte) {
+		System.out.println(prendreParole() + "« " + texte + "»");
 	}
-	for (int i = 0; i < args.length; i++) {
-		
+	private String prendreParole() {
+		return "Le gaulois " + nom + " : ";
 	}
-	do {
-		
-	} while (condition);
-	public void parler() {
-		prendreParole;
-		
-		
-		
-		
-		
-		
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de "
+				+ romain.getNom());
+		romain.recevoirCoup(force / 3);
 	}
-}
-private static void prendreParole() {
-	// TODO Auto-generated method stub
 	
+//	public String toString() {
+//		return "Gaulois [nom=" + nom + ", force=" + force
+//				+ ", effetPotion=" + effetPotion + "]";
+//	}
+	public static void main(String[] args) {
+		asterix (nom = "Astérix", force = 8);
+		System.out.println(asterix);
+
+		//TODO créer un main permettant de tester la classe Gaulois
+	}
 }
 
-}
+
 
 
