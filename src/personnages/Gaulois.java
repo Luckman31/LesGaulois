@@ -2,7 +2,7 @@ package personnages;
 
 import java.security.PublicKey;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
+
 
 public class Gaulois {
 	private String nom;
@@ -31,11 +31,14 @@ public class Gaulois {
 //				+ ", effetPotion=" + effetPotion + "]";
 //	}
 	public static void main(String[] args) {
-		asterix (nom = "Astérix", force = 8);
-		System.out.println(asterix);
+		
 
 		//TODO créer un main permettant de tester la classe Gaulois
 	}
+private void asterix(String string, int i) {
+	// TODO Auto-generated method stub
+	
+}
 }
 
 
