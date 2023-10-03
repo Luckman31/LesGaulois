@@ -24,4 +24,16 @@ public class Romain {
 			parler("J'abandonne...");
 		}
 	}
+	private boolean forcePositive() {
+		boolean positif=true;
+		if (force<0) {
+			positif=false;
+		}
+		return positif;
+	}
+
+
+	public static void main(String[] args) {
+		Romain minus=new Romain("Minus",-6);
+	}
 }
