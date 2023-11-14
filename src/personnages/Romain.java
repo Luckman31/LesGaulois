@@ -6,11 +6,16 @@ public class Romain {
 	Equipement[] equipements=new Equipement[2];
 	int nbEquipement=0;
 	private String texte;
+	private boolean vainqueur=true;
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
 		assert forcePositive();
+		
+	}
+	public int getForce() {
+		return force;
 		
 	}
 	public String getNom() {
@@ -33,6 +38,7 @@ public class Romain {
 //		assert this.force<force;
 //	}
 	public Equipement[] recevoirCoup(int forceCoup) {
+		this.vainqueur=vainqueur;
 		Equipement[] equipementEjecte = null;
 		// précondition
 		assert force > 0;
@@ -47,16 +53,25 @@ public class Romain {
 	// }
 		if (force==0) {
 			parler("Aïe");
+			this.vainqueur=true;
 		}
+		else if (force==oldForce) {
+			parler("Même pas mal");
+			this.vainqueur=true;
+			
+		}
+		
 		else {
 		
 			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
+			this.vainqueur=false;
 			
 		}
 		
 			// post condition la force a diminuée
-		assert force < oldForce;
+		
+		assert force <= oldForce;
 		return equipementEjecte;
 			
 		
@@ -114,10 +129,13 @@ public class Romain {
 				}
 				i++;
 			}
-			texte =+ resistanceEquipement + "!";
+			texte +=resistanceEquipement + "!";
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
+		if (forceCoup<0) {
+			forceCoup=0;
+		}
 		return forceCoup;
 	}
 	private Equipement[] ejecterEquipement() {
